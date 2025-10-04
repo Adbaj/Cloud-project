@@ -1,7 +1,10 @@
-"<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head><title>Cloud Exam Website</title></head>
+<head>
+  <title>Cloud Exam Website</title>
+</head>
 <body>
-<h1>Hello from $(curl -s http://checkip.amazonaws.com)</h1>
+  <h1>Hello from {{ ec2_public_ip.content }}</h1>
+  <p>This is served by an EC2 instance behind the ALB.</p>
 </body>
-</html>"
+</html>
