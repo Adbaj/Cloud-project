@@ -1,20 +1,7 @@
-<!DOCTYPE html>
+"<!DOCTYPE html>
 <html>
-<head>
-  <title>Cloud Exam Website</title>
-</head>
+<head><title>Cloud Exam Website</title></head>
 <body>
-  <h1>Hello from <span id="ip">loading...</span></h1>
-
-  <script>
-    fetch('https://api.ipify.org?format=json')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('ip').textContent = data.ip;
-      })
-      .catch(() => {
-        document.getElementById('ip').textContent = 'unknown';
-      });
-  </script>
+<h1>Hello from $(curl -s http://checkip.amazonaws.com)</h1>
 </body>
-</html>
+</html>"
