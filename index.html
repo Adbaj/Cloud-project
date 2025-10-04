@@ -1,9 +1,20 @@
- <!DOCTYPE html>
-      <html>
-      <head>
-        <title>Cloud Exam Website</title>
-      </head>
-      <body>
-        <h1>Hello from {{ inventory_hostname }} </h1>
-      </body>
-      </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloud Exam Website</title>
+</head>
+<body>
+  <h1>Hello from <span id="ip">loading...</span></h1>
+
+  <script>
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('ip').textContent = data.ip;
+      })
+      .catch(() => {
+        document.getElementById('ip').textContent = 'unknown';
+      });
+  </script>
+</body>
+</html>
